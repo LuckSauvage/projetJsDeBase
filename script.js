@@ -1,23 +1,26 @@
 let listWords = ["Cachalot", "Pétunia","Serviette"];
+let sentence  = ["Pas de panique !", "La vie, l’univers et le reste", "Merci pour le poisson"]
 let score = 0;
-let wordUtilisateur = prompt("Entez le mot :  " + listWords[0]);
-
-if (wordUtilisateur == listWords[0]) {
-    score++
+let choice = prompt ("Veuillez choisir la liste : mots ou phrases")
+while(choice !== "mots" && choice !== "phrases") {
+    choice = prompt ("Veuillez choisir la liste : mots ou phrases")
 }
 
- wordUtilisateur = prompt("Entez le mot :  " + listWords[1]);
-
-if (wordUtilisateur == listWords[1]) {
-    score++
+if(choice === "mots") {
+    for(let i = 0; i < listWords.length; i++) {
+        let userWord = prompt("Entrez le mot " + listWords[i])
+        if (userWord === listWords[i]){
+            score++
+        }
+    }
+} else {
+    for(let i = 0; i < sentence.length; i++) {
+        let userWord = prompt("Entrez la phrase " + sentence[i])
+        if (userWord === sentence[i]){
+            score++
+        }
+    }
 }
 
-wordUtilisateur = prompt("Entez le mot :  " + listWords[2]);
-
-if (wordUtilisateur == listWords[2]) {
-    score++
-}
-
-
-console.log(score)
+alert("vous avez " + score + " Points")
 
